@@ -1,0 +1,822 @@
+Create Database Cooking_Portal;
+
+SELECT COUNT(*) FRom information_schema.tables WHERE table_schema = 'Cooking_Portal';  (Gives Number of Tables in the Database)
+
+1)
+create table Recipe(Recipe_id int Primary key, Recipe_name varchar(50), Recipe_type varchar(50),Description varchar(1000));
+
+
+insert into recipe values(001,'Dal Makhani','Vegetarian','Dal Makhani is a dish originating in New Delhi,India.');
+insert into recipe values(002,'Shahi Paneer','Vegatarian','Shahi paneer is a preparation of paneer consisting of a thick gravy of cream, tomatoes and Indian spices');
+insert into recipe values(003,'Malai Kofta','Vegetarian','It is a popular Indian dish in which potato paneer balls are served with a delicious & creamy gravy.');
+insert into recipe values(004,'Mix Vegetables','Vegetarian','Vegetable kolhapuri is a dish from a city in Maharashtra,which consists of mixed vegetables in a thick gravy.');
+insert into recipe values(005,'Veg. Supreme Biryani','Vegetarian','Biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent.');
+insert into recipe values(006,'Laccha Paratha','Vegetarian','A paratha is a flatbread native to the Indian subcontinent, prevalent throughout the nations.');
+insert into recipe values(007,'Butter Naan','Vegetarian','Naan is a leavened, oven-baked flatbread found in the cuisines mainly of South Asia.');
+insert into recipe values(008,'Manchurian noodles','Vegetarian','Manchurian in the Indian lingo is a term for fried veggies or fried meat in this spicy-umami sauce.');
+insert into recipe values(009,'Masala Pasta','Vegetarian','Pasta is a type of food typically made from an unleavened dough of wheat flour.');
+insert into recipe values(010,'Margherita Pizza','Vegetarian','Pizza is a savory dish of Italian origin consisting of a round,flattened base of leavened wheat-based dough.');
+insert into recipe values(011,'Cheese Frankie','Vegetarian','Traditionally the kathi roll recipe originated from kolkata, West Bengal.');
+insert into recipe values(012,'Focaccia Bread','Vegetarian','Focaccia is a flat oven-baked Italian bread similar in style and texture to pizza.');
+insert into recipe values(013,'Mushroom Risotto','Vegetarian','Risotto is a northern Italian rice dish cooked with broth.');
+insert into recipe values(014,'Bruschetta','Vegetarian','Bruschetta is an antipasto from Italy consisting of grilled bread.');
+insert into recipe values(015,'Masala Dosa','Vegetarian','A dosa is a thin pancake or crepe, originating from South India.');
+insert into recipe values(016,'Uttapam','Vegetarian','Uthappam is a type of dosa from South India. Unlike a typical dosa, uttapam is thicker.');
+insert into recipe values(017,'Idli Vada Sambhar','Vegetarian','Sambhar originated in the kitchens of Thanjavur Maratha ruler Shahuji.');
+insert into recipe values(018,'Hyderabadi Biryani','Vegetarian','Hyderabadi biryani, also known as Hyderabadi dum biryani, is a style of biryani from Hyderabad, India.');
+insert into recipe values(019,'Rasam Rice','Vegetarian','Rasam is a classic example of a traditional South Indian soup which is used as a side dish with rice in meals.');
+insert into recipe values(020,'Aloo Bonda','Vegetarian','Bonda is a deep-fried South Indian potato snack that has various versions in different regions.');
+insert into recipe values(021,'Pakoda with Chutney','Vegetarian','Pakora is a spiced fritter originating from the Indian subcontinent.');
+insert into recipe values(022,'Chiken Tikka','Non-Vegetarian','Chicken tikka is believed to have originated in South Asia during the Mughal era. .');
+insert into recipe values(023,'Chicken Curry with Rice','Non-Vegetarian','Chicken curry is a dish originating from the Indian subcontinent.');
+insert into recipe values(024,'Chicken Biryani','Non-Vegetarian','Biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent.');
+insert into recipe values(025,'Mutton Roast','Non-Vegetarian','Roasted Mutton recipe will be welcomed by non-veg buffs as a breath of fresh air.');
+insert into recipe values(026,'Egg Curry','Non-Vegetarian','Egg Curry is a deliciously rich onion tomato gravy. These are perfect with some rice or paratha.');
+insert into recipe values(027,'Mutton Korma','Non-Vegetarian','Mutton korma is a dish made by slow cooking mutton along with yogurt and spice powders.');
+insert into recipe values(028,'Non Veg Thali','Non-Vegetarian','Though thalis are found throughout the country, it is said that thali originated in South India.');
+insert into recipe values(029,'Paneer Veg momos','Vegetarian','Momo is a type of East and South Asian steamed filled dumpling.');
+insert into recipe values(030,'Spring Rolls','Vegetarian','Spring rolls are a large variety of rolled appetizers found in East Asian & South Asian.');
+insert into recipe values(031,'Onion Pyaz Kachordi','Vegetarian','Pyaz ki kachori probably originated in Jaipur but are today popular throughout Rajasthan.');
+insert into recipe values(032,'Chilli Honey Patatoes','Vegetarian','Chilli potato is a snack from the indo-Chinese cuisine where fried potatoes are tossed in chilli sauce.');
+insert into recipe values(033,'Chicken Wings','Non-Vegetarian','Deep-fried or baked whichever way you like them, chicken wings are the ultimate game-day food.');
+insert into recipe values(034,'Chicken momos','Non-Vegetarian','Momo is a type of East and South Asian steamed filled dumpling.');
+insert into recipe values(035,'Sparkling water','Vegetarian','Sparkling water provides true hydration, and is better than drinking regular soda.');
+insert into recipe values(036,'Badam Milk','Vegetarian','Badam doodh or badam milk is a sweet beverage drink from the Awadhi cuisine.');
+insert into recipe values(037,'Mint Mojito','Vegetarian','Mojito is a traditional Cuban highball and has made the mojito a popular summer drink.');
+insert into recipe values(038,'Cold Hot Coffee','Vegetarian','Cold coffee is a creamy and popular cold beverage, that has mainly three ingredients.');
+insert into recipe values(039,'Ice Tea','Vegetarian','Iced tea is a form of cold tea. It can refer to any tea that has been chilled or cooled.');
+insert into recipe values(040,'Ice Cream Kulfi','Vegetarian','Kulfi is a frozen dairy dessert originating in the Indian subcontinent in the 16th century.');
+insert into recipe values(041,'Gulab Jamun','Vegetarian','Gulab jamun is a milk-solid-based sweet from the Indian subcontinent.');
+insert into recipe values(042,'Rasmalai','Vegetarian','Ras malai or rossomalai or rasamalei is a dessert originating from the Indian subcontinent.');
+insert into recipe values(043,'Jalebi','Vegetarian','Jalebi, also known as jilapi is a sweet snack popular all over South Asia.');
+insert into recipe values(044,'Pasteries','Vegetarian','Pastry is a dough of flour, water and shortening that may be savoury or sweetened.');
+
+
+
+
+2)
+create table North_Indian(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+
+insert into North_Indian values(001,'Dal Makhani','Dal Makhani is a dish originating in New Delhi,India.','Vegetarian',9);
+insert into North_Indian values(002,'Shahi Paneer','Shahi paneer is a preparation of paneer consisting of a thick gravy of cream, tomatoes and Indian spices','Vegetarian',9);
+insert into North_Indian values(003,'Malai Kofta','It is a popular Indian dish in which potato paneer balls are served with a delicious & creamy gravy.','Vegetarian',9);
+insert into North_Indian values(004,'Mix Vegetables','Vegetable kolhapuri is a dish from a city in Maharashtra,which consists of mixed vegetables in a thick gravy.','Vegetarian',10);
+insert into North_Indian values(005,'Veg. Supreme Biryani','Biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent.','Vegetarian',10);
+insert into North_Indian values(006,'Laccha Paratha','A paratha is a flatbread native to the Indian subcontinent, prevalent throughout the nations.','Vegetarian',10);
+insert into North_Indian values(007,'Butter Naan','Naan is a leavened, oven-baked flatbread found in the cuisines mainly of South Asia.','Vegetarian',10);
+
+
+
+3)
+create table Non_Vegetarian_Section(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+
+insert into Non_Vegetarian_Section values(001,'Chiken Tikka','Chicken tikka is believed to have originated in South Asia during the Mughal era.','Non-Veg',9);
+insert into Non_Vegetarian_Section values(002,'Chicken Curry with Rice','Chicken curry is a dish originating from the Indian subcontinent.','Non-Veg',10);
+insert into Non_Vegetarian_Section values(003,'Chicken Biryani','Biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent.','Non-Veg',9);
+insert into Non_Vegetarian_Section values(004,'Mutton Roast','Roasted Mutton recipe will be welcomed by non-veg buffs as a breath of fresh air.','Non-Veg',9);
+insert into Non_Vegetarian_Section values(005,'Egg Curry','Egg Curry is a deliciously rich onion tomato gravy. These are perfect with some rice or paratha.','Non-Veg',9);
+insert into Non_Vegetarian_Section values(006,'Mutton Korma','Mutton korma is a dish made by slow cooking mutton along with yogurt and spice powders.','Non-Veg',10);
+insert into Non_Vegetarian_Section values(007,'Non Veg Thali','Though thalis are found throughout the country, it is said that thali originated in South India.','Non-Veg',10);
+
+
+
+4)
+create table Italian(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+
+insert into Italian values(001,'Manchurian noodles','Manchurian in the Indian lingo is a term for fried veggies or fried meat in this spicy-umami sauce.','Vegetarian',10);
+insert into Italian values(002,'Masala Pasta','Pasta is a type of food typically made from an unleavened dough of wheat flour.','Vegetarian',9);
+insert into Italian values(003,'Margherita Pizza','Pizza is a savory dish of Italian origin consisting of a round,flattened base of leavened wheat-based dough.','Vegetarian',9);
+insert into Italian values(004,'Cheese Frankie','Traditionally the kathi roll recipe originated from kolkata, West Bengal.','Vegetarian',10);
+insert into Italian values(005,'Focaccia Bread','Focaccia is a flat oven-baked Italian bread similar in style and texture to pizza.','Vegetarian',8);
+insert into Italian values(006,'Mushroom Risotto','Risotto is a northern Italian rice dish cooked with broth.','Vegetarian',9);
+insert into Italian values(007,'Bruschetta','Bruschetta is an antipasto from Italy consisting of grilled bread.','Vegetarian',10);
+
+
+
+5)
+create table Snacks(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+
+insert into Snacks values(001,'Paneer Veg momos','Momo is a type of East and South Asian steamed filled dumpling.','Vegetarian',10);
+insert into Snacks values(002,'Spring Rolls','Spring rolls are a large variety of rolled appetizers found in East Asian & South Asian.','Vegetarian',9);
+insert into Snacks values(003,'Onion Pyaz Kachordi','Pyaz ki kachori probably originated in Jaipur but are today popular throughout Rajasthan.','Vegetarian',10);
+insert into Snacks values(004,'Chilli Honey Patatoes','Chilli potato is a snack from the indo-Chinese cuisine where fried potatoes are tossed in chilli sauce.','Vegetarian',10);
+insert into Snacks values(005,'Chicken Wings','Deep-fried or baked whichever way you like them, chicken wings are the ultimate game-day food.','Non Veg',10);
+insert into Snacks values(006,'Chicken momos','Momo is a type of East and South Asian steamed filled dumpling.','Non Veg',10);
+
+
+
+
+6)
+create table Desserts(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+insert into Desserts values(001,'Ice Cream Kulfi','Kulfi is a frozen dairy dessert originating in the Indian subcontinent in the 16th century.','Vegetarian',10);
+insert into Desserts values(002,'Gulab Jamun','Gulab jamun is a milk-solid-based sweet from the Indian subcontinent.','Vegetarian',10);
+insert into Desserts values(003,'Rasmalai','Ras malai or rossomalai or rasamalei is a dessert originating from the Indian subcontinent.','Vegetarian',10);
+insert into Desserts values(004,'Jalebi','Jalebi, also known as jilapi is a sweet snack popular all over South Asia.','Vegetarian',9);
+insert into Desserts values(005,'Pasteries','Pastry is a dough of flour, water and shortening that may be savoury or sweetened.','Vegetarian',9);
+
+
+
+
+7)
+create table South_Indian(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+
+insert into South_Indian values(001,'Masala Dosa','A dosa is a thin pancake or crepe, originating from South India.','Vegetarian',9);
+insert into South_Indian values(002,'Uttapam','Uthappam is a type of dosa from South India. Unlike a typical dosa, uttapam is thicker.','Vegetarian',9);
+insert into South_Indian values(003,'Idli Vada Sambhar','Sambhar originated in the kitchens of Thanjavur Maratha ruler Shahuji.','Vegetarian',10);
+insert into South_Indian values(004,'Hyderabadi Biryani','Hyderabadi biryani, also known as Hyderabadi dum biryani, is a style of biryani from Hyderabad, India.','Vegetarian',10);
+insert into South_Indian values(005,'Rasam Rice','Rasam is a traditional South Indian soup which is used as a side dish with rice in meals.','Vegetarian',10);
+insert into South_Indian values(006,'Aloo Bonda','Bonda is a deep-fried South Indian potato snack that has various versions in different regions.','Vegetarian',9);
+insert into South_Indian values(007,'Pakoda with Chutney','Pakora is a spiced fritter originating from the Indian subcontinent.','Vegetarian',9);
+
+
+
+
+8)
+create table Beverages(Recipe_id int Primary key,Recipe_Name Varchar(30),Description varchar(1000),Recipe_Type varchar(20),Rating int);
+
+insert into Beverages values(001,'Sparkling water','Sparkling water provides true hydration, and is better than drinking regular soda.','Vegetarian',9);
+insert into Beverages values(002,'Badam Milk','Badam doodh or badam milk is a sweet beverage drink from the Awadhi cuisine.','Vegetarian',10);
+insert into Beverages values(003,'Mint Mojito','Mojito is a traditional Cuban highball and has made the mojito a popular summer drink.','Vegetarian',10);
+insert into Beverages values(004,'Cold Hot Coffee','Cold coffee is a creamy and popular cold beverage, that has mainly three ingredients.','Vegetarian',9);
+insert into Beverages values(005,'Ice Tea','Iced tea is a form of cold tea. It can refer to any tea that has been chilled or cooled.','Vegetarian',10);
+
+
+
+
+9)
+create table category(recipe_type varchar(30), category_id int Primary key);
+
+insert into category values('North_Indian', 001);
+insert into category values('South_Indian',002);
+insert into category values('Non-Vegetarian', 003);
+insert into category values('Italian', 004);
+insert into category values('Snacks', 005);
+insert into category values('Desserts',006);
+insert into category values('Beverages', 007);
+
+
+
+
+10)
+create table Proportion(Category_Id int Primary Key, Recipe_Type varchar(30), Count int);
+
+insert into Proportion Values(001,'North_Indian',7);
+insert into Proportion Values(002,'South_Indian',7);
+insert into Proportion Values(003,'Non_Vegetarian',7);
+insert into Proportion Values(004,'Italian',7);
+insert into Proportion Values(005,'Snacks',6);
+insert into Proportion Values(006,'Desserts',6);
+insert into Proportion Values(007,'Beverages',6);
+
+
+
+
+11)
+create table Ingredient(Recipe_Id int Primary key, Recipe_Name Varchar(30), Recipe_Type varchar(20), Ing_Name varchar(1000));
+
+
+insert into Ingredient values(001,'Dal Makhani','Vegetarian','[2 Bowl of Lentils, 1L Milk, Spices and 2 Cups of Water]');
+insert into Ingredient values(002,'Shahi Paneer','Vegetarian','[500g Paneer, Lots of Tomatoes, Oil and Spices]');
+insert into Ingredient values(003,'Malai Kofta','Vegetarian','[Lots of Potatoes and Tomatoes, Oil, Spices and Milk ]');
+insert into Ingredient values(004,'Mix Vegetables','Vegetarian','[Lot of Vegetables, Oil, Spices and Olives]');
+insert into Ingredient values(005,'Veg. Supreme Biryani','Vegetarian','[Basmati Rice, Nutella and Vegetables, Oil, 4 to 5 Cups of Water]');
+insert into Ingredient values(006,'Laccha Paratha','Vegetarian','[Flour, Pudhina, Butter and Ghee]');
+insert into Ingredient values(007,'Butter Naan','Vegetarian','[Flour, Butter, Ghee and Some Spices]');
+insert into Ingredient values(008,'Manchurian noodles','Vegetarian','[Noodles, Machurian Balls, Spicy Sauce and Mint]');
+insert into Ingredient values(009,'Masala Pasta','Vegetarian','[Pasta, Spices, 2 Cups of Water and Oil]');
+insert into Ingredient values(010,'Margherita Pizza','Vegetarian','[Pizza Dough, Olives and Jalapenoes, Cheese, Oil]');
+insert into Ingredient values(011,'Cheese Frankie','Vegetarian','[Cheese Dough, Mayonnaise, Mashed Patotoes and Spices]');
+insert into Ingredient values(012,'Focaccia Bread','Vegetarian','[Bread, Flour, Olive Oil, Sugar and Salt]');
+insert into Ingredient values(013,'Mushroom Risotto','Vegetarian','[Grilled Mushrooms, Steamed Rice, Olive Oil and White Wine]');
+insert into Ingredient values(014,'Bruschetta','Vegetarian','[Bread, Mozzarella Cheese, Vegetables and Garlic]');
+insert into Ingredient values(015,'Masala Dosa','Vegetarian','[3 Bowl of Lentils, Rice , Potatoes and Oil]');
+insert into Ingredient values(016,'Uttapam','Vegetarian','[4 Bowl of Lentiles, Vegetables, Salt and Pepper and Coriander]');
+insert into Ingredient values(017,'Idli Vada Sambhar','Vegetarian','[6 Bowl of Lentis, Rice, Coconut Oil and Tamarind]');
+insert into Ingredient values(018,'Hyderabadi Biryani','Vegetarian','[Basmati Rice, Lots of Spices and additives, Oil and 3 Cups of Water]');
+insert into Ingredient values(019,'Rasam Rice','Vegetarian','[Lots of Vegetables, Jaggery and ginger, Rasam Powder and 2 Cups of Water]');
+insert into Ingredient values(020,'Aloo Bonda','Vegetarian','[Deep fried Potatoes, Lots of Spices, Gram Flour and Salt and Pepper]');
+insert into Ingredient values(021,'Pakoda with Chutney','Vegetarian','[Garbanzo Flour, Lots of Chillies, Ginger and Garlic and Sauce]');
+insert into Ingredient values(022,'Chiken Tikka','Non-Vegetarian','[Deep friend Chicken, Cream, Lots of Spices and Some vegetables]');
+insert into Ingredient values(023,'Chicken Curry with Rice','Non-Vegetarian','[Boiled Chicken, Chilli Sauce and Spices, 2 Cups of Water and Basmati Rice]');
+insert into Ingredient values(024,'Chicken Biryani','Non-Vegetarian','[Basmati Rice, Chicken Leg Piece, Lots of Spices and Olives and Oil]');
+insert into Ingredient values(025,'Mutton Roast','Non-Vegetarian','[Fried Mutton, Garam Masala, Spices and Pepper and Curry Leaves]');
+insert into Ingredient values(026,'Egg Curry','Non-Vegetarian','[5 to 6 Boiled Eggs, Tomato Gravy, Spices and Pepper and Cream]');
+insert into Ingredient values(027,'Mutton Korma','Non-Vegetarian','[Creamy and fried Mutton, Lots of Spices and Pepper, Onions and Ginger]');
+insert into Ingredient values(028,'Non Veg Thali','Non-Vegetarian','[Chicken Leg Piece, Basmati rice with Curd, Vegetables and Olive Oil]');
+insert into Ingredient values(029,'Paneer Veg momos','Vegetarian','[White and Water Flour, Vegetables, Salt and Pepper and Mayonaise]');
+insert into Ingredient values(030,'Spring Rolls','Vegetarian','[Lots of Vegetables, White Flour , Spices and Pepper and Soya Sauce]');
+insert into Ingredient values(031,'Onion Pyaz Kachordi','Vegetarian','[Gram Flour, Salt and Pepper, Lots of Mashed Onions and Ghee]');
+insert into Ingredient values(032,'Chilli Honey Patatoes','Vegetarian','[Fine deep fried Chopped Potatoes, Chilli and Honey Sauce, Olive Oil and Mayonnaise]');
+insert into Ingredient values(033,'Chicken Wings','Non-Vegetarian','[Chicken Leg Piece, Garlic and Pepper, Hot Sauce and Flavoured Dip]');
+insert into Ingredient values(034,'Chicken momos','Non-Vegetarian','[Fried Chicken, White and Water Flour, Mayonnaise, Salt and Pepper]');
+insert into Ingredient values(035,'Sparkling water','Vegetarian','[Carbonated water, Essential Minerals and a Pinch of Salt]');
+insert into Ingredient values(036,'Badam Milk','Vegetarian','[Almonds, Rose Water and Fat/Butter Milk, Saffron and Sugar]');
+insert into Ingredient values(037,'Mint Mojito','Vegetarian','[Club Soda, White Rum and Lime, Sugar and Fresh Mint Leaves]');
+insert into Ingredient values(038,'Cold Hot Coffee','Vegetarian','[Vanilla Ice-cream, Hot/Cold Brew, Chocolate Syrup and Sugar]');
+insert into Ingredient values(039,'Ice Tea','Vegetarian','[Lots of Fruits, Honey and Mint, Lemon Juice and Sugar]');
+insert into Ingredient values(040,'Ice Cream Kulfi','Vegetarian','[Whole Milk, Sugar , Natural Additives and Cashew Nuts]');
+insert into Ingredient values(041,'Gulab Jamun','Vegetarian','[Powdered Milk, Milk and Khoa, Maida and Sugar]');
+insert into Ingredient values(042,'Rasmalai','Vegetarian','[Fat/Butter Milk, Dry Fruits, Saffron and Sugar]');
+insert into Ingredient values(043,'Jalebi','Vegetarian','[Baking Powder, Flour and Miada, Ghee and Sugar]');
+insert into Ingredient values(044,'Pasteries','Vegetarian','[Baking Flour, Milk and Sugar, Some Additives and Eggs]');
+
+
+
+
+12)
+create table User(User_Id int Primary Key, User_Name Varchar(30), Phone_Number decimal(10), Email_id varchar(30), Review varchar(1000));
+
+insert into User values(001,'Amit Trivedi',9777777777,'Amitrocks@mail.com','This site is very useful for beginners.');
+insert into User values(002,'Adhyaan Kumar',8989898989,'Adhyaan@hotmail.com','Keep up the good work.');
+insert into User values(003,'Shiela Gupta',9009900990,'shiela12@gmail.com','Awesome work man!.');
+insert into User values(004,'Zaran Sheik',9999988888,'Zask@yahoo.com','Great work dude. Keep it up!.');
+insert into User values(005,'Priya Goel',9191818191,'ph@hotmail.com','Finally got the website which i was searching for, Thnx mate!.');
+insert into User values(006,'Krish Seth',6776676776,'Krish989@gmail.com','Yo! Good workk!!!');
+insert into User values(007,'Kat Singhania',4545454545,'kats@yahoo.com','I am lovinn this site !!!!!');
+insert into User values(008,'Akshat Bhandari',8790712345,'akshat@hotweb.com','Oh gosh! U are Fasinating');
+   
+
+
+
+
+13)
+create table Video_Tutorials(Recipe_id int Primary key, Recipe_Name Varchar(30), Video_Link Varchar(1000)); 
+
+
+insert into video_tutorials values(001,'Dal Makhani','https://youtu.be/f1lpCi_70sQ');
+insert into video_tutorials values(002,'Shahi Paneer','https://youtu.be/G3-EASdBTOU');
+insert into video_tutorials values(003,'Malai Kofta','https://youtu.be/wmwnEnnDgmc');
+insert into video_tutorials values(004,'Mix Vegetables','https://youtu.be/V6Pc5GUWusU');
+insert into video_tutorials values(005,'Veg. Supreme Biryani','https://youtu.be/SZByh7nXp1U');
+insert into video_tutorials values(006,'Laccha Paratha','https://youtu.be/OGUDOcTJAt4');
+insert into video_tutorials values(007,'Butter Naan','https://youtu.be/WnkTTvAVisU');
+insert into video_tutorials values(008,'Manchurian noodles','https://youtu.be/9y2B9n7vbYw');
+insert into video_tutorials values(009,'Masala Pasta','https://youtu.be/bcnPfcJnYr0');
+insert into video_tutorials values(010,'Margherita Pizza','https://youtu.be/xdshDFwu9x4');
+insert into video_tutorials values(011,'Cheese Frankie','https://youtu.be/gupuzkkaY6k');
+insert into video_tutorials values(012,'Focaccia Bread','https://youtu.be/McY5FU7sqYU');
+insert into video_tutorials values(013,'Mushroom Risotto','https://youtu.be/47cV3tj5MZc');
+insert into video_tutorials values(014,'Bruschetta','https://youtu.be/2AwtlyAL5TY');
+insert into video_tutorials values(015,'Masala Dosa','https://youtu.be/J75VQSxOtdo');
+insert into video_tutorials values(016,'Uttapam','https://youtu.be/J75VQSxOtdo');
+insert into video_tutorials values(017,'Idli Vada Sambhar','https://youtu.be/YUooSszVgJ0');
+insert into video_tutorials values(018,'Hyderabadi Recipe','https://youtube/8Fw_zWPbGog');
+insert into video_tutorials values(019,'Rasam Rice','https://youtu.be/MbE0Y8G_mnE');
+insert into video_tutorials values(020,'Aloo Bonda','https://youtu.be/lvWN1L4EMO4');
+insert into video_tutorials values(021,'Pakoda with Chutney','https://youtu.be/_yCJ0X4YuDI');
+insert into video_tutorials values(022,'Chicken Tikka','https://youtu.be/6No7g2GptXY');
+insert into video_tutorials values(023,'Chicken Curry with Rice','https://youtu.be/jwyge5daKUQ');
+insert into video_tutorials values(024,'Chicken Biryani','https://youtu.be/95BCU1n268w');
+insert into video_tutorials values(025,'Mutton Roast','https://youtu.be/HAN9Ealmbto');
+insert into video_tutorials values(026,'Egg Curry','https://youtu.be/FtCdvlVhzds');
+insert into video_tutorials values(027,'Mutton Korma','https://youtu.be/oPBs1oVbM4A');
+insert into video_tutorials values(028,'Non. Veg Thali','https://youtu.be/R1GhSDrV_Ks');
+insert into video_tutorials values(029,'Paneer Veg momos','https://youtu.be/QksJ9WnqH88');
+insert into video_tutorials values(030,'Spring Rolls','https://youtu.be/u2dt0yjaLC0');
+insert into video_tutorials values(031,'Onion Pyaz Kachordi','https://youtu.be/x51SuDEnRco');
+insert into video_tutorials values(032,'Chilli Honey Patotoes','https://youtu.be/HToinNNWISU');
+insert into video_tutorials values(033,'Chicken Wings','https://youtu.be/6eMvf4Gnrhk');
+insert into video_tutorials values(034,'Chicken momos','https://youtu.be/Zmn1rpPOKBc');
+insert into video_tutorials values(035,'Sparkling Water','https://youtu.be/5DT4EWHNmzE');
+insert into video_tutorials values(036,'Badam Milk','https://youtu.be/2VCVi3zwTK0');
+insert into video_tutorials values(037,'Mint Mojito','https://youtu.be/RmV1JQolnXo');
+insert into video_tutorials values(038,'Cold Hot Coffee','https://youtu.be/7f96Ftl5ryQ');
+insert into video_tutorials values(039,'Ice Tea','https://youtu.be/RqRVP1KYmPE');
+insert into video_tutorials values(040,'Ice Cream/Kulfi','https://youtu.be/f6D7A6-QNl8');
+insert into video_tutorials values(041,'Gulab Jamun','https://youtu.be/HVMpZNHQV9c');
+insert into video_tutorials values(042,'Rasmalai','https://youtu.be/znefLMNyVE8');
+insert into video_tutorials values(043,'Jalebi','https://youtu.be/0w471_wMPP0');
+insert into video_tutorials values(044,'Pasteries','https://youtu.be/oVjawFE4Pps');
+
+
+
+
+14)
+create table Om(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Om values(001,'Dal Makhani',0);
+insert into Om values(002,'Shahi Paneer',0);
+insert into Om values(003,'Malai Kofta',0);
+insert into Om values(004,'Mix Vegetables',0);
+insert into Om values(005,'Veg. Supreme Biryani',0);
+insert into Om values(006,'Laccha Paratha',0);
+insert into Om values(007,'Butter Naan',0);
+insert into Om values(008,'Manchurian noodles',0);
+insert into Om values(009,'Masala Pasta',0);
+insert into Om values(010,'Margherita Pizza',0);
+insert into Om values(011,'Cheese Frankie',0);
+insert into Om values(012,'Focaccia Bread',0);
+insert into Om values(013,'Mushroom Risotto',0);
+insert into Om values(014,'Bruschetta',0);
+insert into Om values(015,'Masala Dosa',0);
+insert into Om values(016,'Uttapam',0);
+insert into Om values(017,'Idli Vada Sambhar',0);
+insert into Om values(018,'Hyderabadi Biryani',0);
+insert into Om values(019,'Rasam Rice',0);
+insert into Om values(020,'Aloo Bonda',0);
+insert into Om values(021,'Pakoda with Chutney',0);
+insert into Om values(022,'Chiken Tikka',0);
+insert into Om values(023,'Chicken Curry with Rice',0);
+insert into Om values(024,'Chicken Biryani',0);
+insert into Om values(025,'Mutton Roast',0);
+insert into Om values(026,'Egg Curry',0);
+insert into Om values(027,'Mutton Korma',0);
+insert into Om values(029,'Paneer Veg momos',0);
+insert into Om values(030,'Spring Rolls',0);
+insert into Om values(031,'Onion Pyaz Kachordi',0);
+insert into Om values(032,'Chilli Honey Patatoes',0);
+insert into Om values(033,'Chicken Wings',0);
+insert into Om values(034,'Chicken momos',0);
+insert into Om values(035,'Sparkling water',0);
+insert into Om values(036,'Badam Milk',0);
+insert into Om values(037,'Mint Mojito',0);
+insert into Om values(038,'Cold Hot Coffee',0);
+insert into Om values(039,'Ice Tea',0);
+insert into Om values(040,'Ice Cream Kulfi',0);
+insert into Om values(041,'Gulab Jamun',0);
+insert into Om values(042,'Rasmalai',0);
+insert into Om values(043,'Jalebi',0);
+insert into Om values(044,'Pasteries',0);
+
+
+
+
+15)
+create table Ansh(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Ansh values(001,'Dal Makhani',0);
+insert into Ansh values(002,'Shahi Paneer',0);
+insert into Ansh values(003,'Malai Kofta',0);
+insert into Ansh values(004,'Mix Vegetables',0);
+insert into Ansh values(005,'Veg. Supreme Biryani',0);
+insert into Ansh values(006,'Laccha Paratha',0);
+insert into Ansh values(007,'Butter Naan',0);
+insert into Ansh values(008,'Manchurian noodles',0);
+insert into Ansh values(009,'Masala Pasta',0);
+insert into Ansh values(010,'Margherita Pizza',0);
+insert into Ansh values(011,'Cheese Frankie',0);
+insert into Ansh values(012,'Focaccia Bread',0);
+insert into Ansh values(013,'MushroAnsh Risotto',0);
+insert into Ansh values(014,'Bruschetta',0);
+insert into Ansh values(015,'Masala Dosa',0);
+insert into Ansh values(016,'Uttapam',0);
+insert into Ansh values(017,'Idli Vada Sambhar',0);
+insert into Ansh values(018,'Hyderabadi Biryani',0);
+insert into Ansh values(019,'Rasam Rice',0);
+insert into Ansh values(020,'Aloo Bonda',0);
+insert into Ansh values(021,'Pakoda with Chutney',0);
+insert into Ansh values(022,'Chiken Tikka',0);
+insert into Ansh values(023,'Chicken Curry with Rice',0);
+insert into Ansh values(024,'Chicken Biryani',0);
+insert into Ansh values(025,'Mutton Roast',0);
+insert into Ansh values(026,'Egg Curry',0);
+insert into Ansh values(027,'Mutton Korma',0);
+insert into Ansh values(029,'Paneer Veg mAnshos',0);
+insert into Ansh values(030,'Spring Rolls',0);
+insert into Ansh values(031,'Onion Pyaz Kachordi',0);
+insert into Ansh values(032,'Chilli Honey Patatoes',0);
+insert into Ansh values(033,'Chicken Wings',0);
+insert into Ansh values(034,'Chicken mAnshos',0);
+insert into Ansh values(035,'Sparkling water',0);
+insert into Ansh values(036,'Badam Milk',0);
+insert into Ansh values(037,'Mint Mojito',0);
+insert into Ansh values(038,'Cold Hot Coffee',0);
+insert into Ansh values(039,'Ice Tea',0);
+insert into Ansh values(040,'Ice Cream Kulfi',0);
+insert into Ansh values(041,'Gulab Jamun',0);
+insert into Ansh values(042,'Rasmalai',0);
+insert into Ansh values(043,'Jalebi',0);
+insert into Ansh values(044,'Pasteries',0);
+
+
+
+
+16)
+create table Amit_Trivedi(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Amit_Trivedi values(001,'Dal Makhani',0);
+insert into Amit_Trivedi values(002,'Shahi Paneer',0);
+insert into Amit_Trivedi values(003,'Malai Kofta',0);
+insert into Amit_Trivedi values(004,'Mix Vegetables',0);
+insert into Amit_Trivedi values(005,'Veg. Supreme Biryani',0);
+insert into Amit_Trivedi values(006,'Laccha Paratha',0);
+insert into Amit_Trivedi values(007,'Butter Naan',0);
+insert into Amit_Trivedi values(008,'Manchurian noodles',0);
+insert into Amit_Trivedi values(009,'Masala Pasta',0);
+insert into Amit_Trivedi values(010,'Margherita Pizza',0);
+insert into Amit_Trivedi values(011,'Cheese Frankie',0);
+insert into Amit_Trivedi values(012,'Focaccia Bread',0);
+insert into Amit_Trivedi values(013,'MushroAmit_Trivedi Risotto',0);
+insert into Amit_Trivedi values(014,'Bruschetta',0);
+insert into Amit_Trivedi values(015,'Masala Dosa',0);
+insert into Amit_Trivedi values(016,'Uttapam',0);
+insert into Amit_Trivedi values(017,'Idli Vada Sambhar',0);
+insert into Amit_Trivedi values(018,'Hyderabadi Biryani',0);
+insert into Amit_Trivedi values(019,'Rasam Rice',0);
+insert into Amit_Trivedi values(020,'Aloo Bonda',0);
+insert into Amit_Trivedi values(021,'Pakoda with Chutney',0);
+insert into Amit_Trivedi values(022,'Chiken Tikka',0);A
+insert into Amit_Trivedi values(023,'Chicken Curry with Rice',0);
+insert into Amit_Trivedi values(024,'Chicken Biryani',0);
+insert into Amit_Trivedi values(025,'Mutton Roast',0);
+insert into Amit_Trivedi values(026,'Egg Curry',0);
+insert into Amit_Trivedi values(027,'Mutton Korma',0);
+insert into Amit_Trivedi values(029,'Paneer Veg mAmit_Trivedios',0);
+insert into Amit_Trivedi values(030,'Spring Rolls',0);
+insert into Amit_Trivedi values(031,'Onion Pyaz Kachordi',0);
+insert into Amit_Trivedi values(032,'Chilli Honey Patatoes',0);
+insert into Amit_Trivedi values(033,'Chicken Wings',0);
+insert into Amit_Trivedi values(034,'Chicken mAmit_Trivedios',0);
+insert into Amit_Trivedi values(035,'Sparkling water',0);
+insert into Amit_Trivedi values(036,'Badam Milk',0);
+insert into Amit_Trivedi values(037,'Mint Mojito',0);
+insert into Amit_Trivedi values(038,'Cold Hot Coffee',0);
+insert into Amit_Trivedi values(039,'Ice Tea',0);
+insert into Amit_Trivedi values(040,'Ice Cream Kulfi',0);
+insert into Amit_Trivedi values(041,'Gulab Jamun',0);
+insert into Amit_Trivedi values(042,'Rasmalai',0);
+insert into Amit_Trivedi values(043,'Jalebi',0);
+insert into Amit_Trivedi values(044,'Pasteries',0);
+
+
+
+17)
+create table Adhyaan_Kumar(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Adhyaan_Kumar values(001,'Dal Makhani',0);
+insert into Adhyaan_Kumar values(002,'Shahi Paneer',0);
+insert into Adhyaan_Kumar values(003,'Malai Kofta',0);
+insert into Adhyaan_Kumar values(004,'Mix Vegetables',0);
+insert into Adhyaan_Kumar values(005,'Veg. Supreme Biryani',0);
+insert into Adhyaan_Kumar values(006,'Laccha Paratha',0);
+insert into Adhyaan_Kumar values(007,'Butter Naan',0);
+insert into Adhyaan_Kumar values(008,'Manchurian noodles',0);
+insert into Adhyaan_Kumar values(009,'Masala Pasta',0);
+insert into Adhyaan_Kumar values(010,'Margherita Pizza',0);
+insert into Adhyaan_Kumar values(011,'Cheese Frankie',0);
+insert into Adhyaan_Kumar values(012,'Focaccia Bread',0);
+insert into Adhyaan_Kumar values(013,'MushroAdhyaan_Kumar Risotto',0);
+insert into Adhyaan_Kumar values(014,'Bruschetta',0);
+insert into Adhyaan_Kumar values(015,'Masala Dosa',0);
+insert into Adhyaan_Kumar values(016,'Uttapam',0);
+insert into Adhyaan_Kumar values(017,'Idli Vada Sambhar',0);
+insert into Adhyaan_Kumar values(018,'Hyderabadi Biryani',0);
+insert into Adhyaan_Kumar values(019,'Rasam Rice',0);
+insert into Adhyaan_Kumar values(020,'Aloo Bonda',0);
+insert into Adhyaan_Kumar values(021,'Pakoda with Chutney',0);
+insert into Adhyaan_Kumar values(022,'Chiken Tikka',0);
+insert into Adhyaan_Kumar values(023,'Chicken Curry with Rice',0);
+insert into Adhyaan_Kumar values(024,'Chicken Biryani',0);
+insert into Adhyaan_Kumar values(025,'Mutton Roast',0);
+insert into Adhyaan_Kumar values(026,'Egg Curry',0);
+insert into Adhyaan_Kumar values(027,'Mutton Korma',0);
+insert into Adhyaan_Kumar values(029,'Paneer Veg mAdhyaan_Kumaros',0);
+insert into Adhyaan_Kumar values(030,'Spring Rolls',0);
+insert into Adhyaan_Kumar values(031,'Onion Pyaz Kachordi',0);
+insert into Adhyaan_Kumar values(032,'Chilli Honey Patatoes',0);
+insert into Adhyaan_Kumar values(033,'Chicken Wings',0);
+insert into Adhyaan_Kumar values(034,'Chicken mAdhyaan_Kumaros',0);
+insert into Adhyaan_Kumar values(035,'Sparkling water',0);
+insert into Adhyaan_Kumar values(036,'Badam Milk',0);
+insert into Adhyaan_Kumar values(037,'Mint Mojito',0);
+insert into Adhyaan_Kumar values(038,'Cold Hot Coffee',0);
+insert into Adhyaan_Kumar values(039,'Ice Tea',0);
+insert into Adhyaan_Kumar values(040,'Ice Cream Kulfi',0);
+insert into Adhyaan_Kumar values(041,'Gulab Jamun',0);
+insert into Adhyaan_Kumar values(042,'Rasmalai',0);
+insert into Adhyaan_Kumar values(043,'Jalebi',0);
+insert into Adhyaan_Kumar values(044,'Pasteries',0);
+
+
+
+18)
+create table Shiela_Gupta(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Shiela_Gupta values(001,'Dal Makhani',0);
+insert into Shiela_Gupta values(002,'Shahi Paneer',0);
+insert into Shiela_Gupta values(003,'Malai Kofta',0);
+insert into Shiela_Gupta values(004,'Mix Vegetables',0);
+insert into Shiela_Gupta values(005,'Veg. Supreme Biryani',0);
+insert into Shiela_Gupta values(006,'Laccha Paratha',0);
+insert into Shiela_Gupta values(007,'Butter Naan',0);
+insert into Shiela_Gupta values(008,'Manchurian noodles',0);
+insert into Shiela_Gupta values(009,'Masala Pasta',0);
+insert into Shiela_Gupta values(010,'Margherita Pizza',0);
+insert into Shiela_Gupta values(011,'Cheese Frankie',0);
+insert into Shiela_Gupta values(012,'Focaccia Bread',0);
+insert into Shiela_Gupta values(013,'MushroShiela_Gupta Risotto',0);
+insert into Shiela_Gupta values(014,'Bruschetta',0);
+insert into Shiela_Gupta values(015,'Masala Dosa',0);
+insert into Shiela_Gupta values(016,'Uttapam',0);
+insert into Shiela_Gupta values(017,'Idli Vada Sambhar',0);
+insert into Shiela_Gupta values(018,'Hyderabadi Biryani',0);
+insert into Shiela_Gupta values(019,'Rasam Rice',0);
+insert into Shiela_Gupta values(020,'Aloo Bonda',0);
+insert into Shiela_Gupta values(021,'Pakoda with Chutney',0);
+insert into Shiela_Gupta values(022,'Chiken Tikka',0);
+insert into Shiela_Gupta values(023,'Chicken Curry with Rice',0);
+insert into Shiela_Gupta values(024,'Chicken Biryani',0);
+insert into Shiela_Gupta values(025,'Mutton Roast',0);
+insert into Shiela_Gupta values(026,'Egg Curry',0);
+insert into Shiela_Gupta values(027,'Mutton Korma',0);
+insert into Shiela_Gupta values(029,'Paneer Veg mShiela_Guptaos',0);
+insert into Shiela_Gupta values(030,'Spring Rolls',0);
+insert into Shiela_Gupta values(031,'Onion Pyaz Kachordi',0);
+insert into Shiela_Gupta values(032,'Chilli Honey Patatoes',0);
+insert into Shiela_Gupta values(033,'Chicken Wings',0);
+insert into Shiela_Gupta values(034,'Chicken mShiela_Guptaos',0);
+insert into Shiela_Gupta values(035,'Sparkling water',0);
+insert into Shiela_Gupta values(036,'Badam Milk',0);
+insert into Shiela_Gupta values(037,'Mint Mojito',0);
+insert into Shiela_Gupta values(038,'Cold Hot Coffee',0);
+insert into Shiela_Gupta values(039,'Ice Tea',0);
+insert into Shiela_Gupta values(040,'Ice Cream Kulfi',0);
+insert into Shiela_Gupta values(041,'Gulab Jamun',0);
+insert into Shiela_Gupta values(042,'Rasmalai',0);
+insert into Shiela_Gupta values(043,'Jalebi',0);
+insert into Shiela_Gupta values(044,'Pasteries',0);
+
+
+19)
+create table Zaran_Sheik(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Zaran_Sheik values(001,'Dal Makhani',0);
+insert into Zaran_Sheik values(002,'Shahi Paneer',0);
+insert into Zaran_Sheik values(003,'Malai Kofta',0);
+insert into Zaran_Sheik values(004,'Mix Vegetables',0);
+insert into Zaran_Sheik values(005,'Veg. Supreme Biryani',0);
+insert into Zaran_Sheik values(006,'Laccha Paratha',0);
+insert into Zaran_Sheik values(007,'Butter Naan',0);
+insert into Zaran_Sheik values(008,'Manchurian noodles',0);
+insert into Zaran_Sheik values(009,'Masala Pasta',0);
+insert into Zaran_Sheik values(010,'Margherita Pizza',0);
+insert into Zaran_Sheik values(011,'Cheese Frankie',0);
+insert into Zaran_Sheik values(012,'Focaccia Bread',0);
+insert into Zaran_Sheik values(013,'MushroZaran_Sheik Risotto',0);
+insert into Zaran_Sheik values(014,'Bruschetta',0);
+insert into Zaran_Sheik values(015,'Masala Dosa',0);
+insert into Zaran_Sheik values(016,'Uttapam',0);
+insert into Zaran_Sheik values(017,'Idli Vada Sambhar',0);
+insert into Zaran_Sheik values(018,'Hyderabadi Biryani',0);
+insert into Zaran_Sheik values(019,'Rasam Rice',0);
+insert into Zaran_Sheik values(020,'Aloo Bonda',0);
+insert into Zaran_Sheik values(021,'Pakoda with Chutney',0);
+insert into Zaran_Sheik values(022,'Chiken Tikka',0);
+insert into Zaran_Sheik values(023,'Chicken Curry with Rice',0);
+insert into Zaran_Sheik values(024,'Chicken Biryani',0);
+insert into Zaran_Sheik values(025,'Mutton Roast',0);
+insert into Zaran_Sheik values(026,'Egg Curry',0);
+insert into Zaran_Sheik values(027,'Mutton Korma',0);
+insert into Zaran_Sheik values(029,'Paneer Veg mZaran_Sheikos',0);
+insert into Zaran_Sheik values(030,'Spring Rolls',0);
+insert into Zaran_Sheik values(031,'Onion Pyaz Kachordi',0);
+insert into Zaran_Sheik values(032,'Chilli Honey Patatoes',0);
+insert into Zaran_Sheik values(033,'Chicken Wings',0);
+insert into Zaran_Sheik values(034,'Chicken mZaran_Sheikos',0);
+insert into Zaran_Sheik values(035,'Sparkling water',0);
+insert into Zaran_Sheik values(036,'Badam Milk',0);
+insert into Zaran_Sheik values(037,'Mint Mojito',0);
+insert into Zaran_Sheik values(038,'Cold Hot Coffee',0);
+insert into Zaran_Sheik values(039,'Ice Tea',0);
+insert into Zaran_Sheik values(040,'Ice Cream Kulfi',0);
+insert into Zaran_Sheik values(041,'Gulab Jamun',0);
+insert into Zaran_Sheik values(042,'Rasmalai',0);
+insert into Zaran_Sheik values(043,'Jalebi',0);
+insert into Zaran_Sheik values(044,'Pasteries',0);
+
+
+20)
+create table Priya_Goel(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Priya_Goel values(001,'Dal Makhani',0);
+insert into Priya_Goel values(002,'Shahi Paneer',0);
+insert into Priya_Goel values(003,'Malai Kofta',0);
+insert into Priya_Goel values(004,'Mix Vegetables',0);
+insert into Priya_Goel values(005,'Veg. Supreme Biryani',0);
+insert into Priya_Goel values(006,'Laccha Paratha',0);
+insert into Priya_Goel values(007,'Butter Naan',0);
+insert into Priya_Goel values(008,'Manchurian noodles',0);
+insert into Priya_Goel values(009,'Masala Pasta',0);
+insert into Priya_Goel values(010,'Margherita Pizza',0);
+insert into Priya_Goel values(011,'Cheese Frankie',0);
+insert into Priya_Goel values(012,'Focaccia Bread',0);
+insert into Priya_Goel values(013,'MushroPriya_Goel Risotto',0);
+insert into Priya_Goel values(014,'Bruschetta',0);
+insert into Priya_Goel values(015,'Masala Dosa',0);
+insert into Priya_Goel values(016,'Uttapam',0);
+insert into Priya_Goel values(017,'Idli Vada Sambhar',0);
+insert into Priya_Goel values(018,'Hyderabadi Biryani',0);
+insert into Priya_Goel values(019,'Rasam Rice',0);
+insert into Priya_Goel values(020,'Aloo Bonda',0);
+insert into Priya_Goel values(021,'Pakoda with Chutney',0);
+insert into Priya_Goel values(022,'Chiken Tikka',0);
+insert into Priya_Goel values(023,'Chicken Curry with Rice',0);
+insert into Priya_Goel values(024,'Chicken Biryani',0);
+insert into Priya_Goel values(025,'Mutton Roast',0);
+insert into Priya_Goel values(026,'Egg Curry',0);
+insert into Priya_Goel values(027,'Mutton Korma',0);
+insert into Priya_Goel values(029,'Paneer Veg mPriya_Goelos',0);
+insert into Priya_Goel values(030,'Spring Rolls',0);
+insert into Priya_Goel values(031,'Onion Pyaz Kachordi',0);
+insert into Priya_Goel values(032,'Chilli Honey Patatoes',0);
+insert into Priya_Goel values(033,'Chicken Wings',0);
+insert into Priya_Goel values(034,'Chicken mPriya_Goelos',0);
+insert into Priya_Goel values(035,'Sparkling water',0);
+insert into Priya_Goel values(036,'Badam Milk',0);
+insert into Priya_Goel values(037,'Mint Mojito',0);
+insert into Priya_Goel values(038,'Cold Hot Coffee',0);
+insert into Priya_Goel values(039,'Ice Tea',0);
+insert into Priya_Goel values(040,'Ice Cream Kulfi',0);
+insert into Priya_Goel values(041,'Gulab Jamun',0);
+insert into Priya_Goel values(042,'Rasmalai',0);
+insert into Priya_Goel values(043,'Jalebi',0);
+insert into Priya_Goel values(044,'Pasteries',0);
+
+
+21)
+create table Krish_Seth(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Krish_Seth values(001,'Dal Makhani',0);
+insert into Krish_Seth values(002,'Shahi Paneer',0);
+insert into Krish_Seth values(003,'Malai Kofta',0);
+insert into Krish_Seth values(004,'Mix Vegetables',0);
+insert into Krish_Seth values(005,'Veg. Supreme Biryani',0);
+insert into Krish_Seth values(006,'Laccha Paratha',0);
+insert into Krish_Seth values(007,'Butter Naan',0);
+insert into Krish_Seth values(008,'Manchurian noodles',0);
+insert into Krish_Seth values(009,'Masala Pasta',0);
+insert into Krish_Seth values(010,'Margherita Pizza',0);
+insert into Krish_Seth values(011,'Cheese Frankie',0);
+insert into Krish_Seth values(012,'Focaccia Bread',0);
+insert into Krish_Seth values(013,'MushroKrish_Seth Risotto',0);
+insert into Krish_Seth values(014,'Bruschetta',0);
+insert into Krish_Seth values(015,'Masala Dosa',0);
+insert into Krish_Seth values(016,'Uttapam',0);
+insert into Krish_Seth values(017,'Idli Vada Sambhar',0);
+insert into Krish_Seth values(018,'Hyderabadi Biryani',0);
+insert into Krish_Seth values(019,'Rasam Rice',0);
+insert into Krish_Seth values(020,'Aloo Bonda',0);
+insert into Krish_Seth values(021,'Pakoda with Chutney',0);
+insert into Krish_Seth values(022,'Chiken Tikka',0);
+insert into Krish_Seth values(023,'Chicken Curry with Rice',0);
+insert into Krish_Seth values(024,'Chicken Biryani',0);
+insert into Krish_Seth values(025,'Mutton Roast',0);
+insert into Krish_Seth values(026,'Egg Curry',0);
+insert into Krish_Seth values(027,'Mutton Korma',0);
+insert into Krish_Seth values(029,'Paneer Veg mKrish_Sethos',0);
+insert into Krish_Seth values(030,'Spring Rolls',0);
+insert into Krish_Seth values(031,'Onion Pyaz Kachordi',0);
+insert into Krish_Seth values(032,'Chilli Honey Patatoes',0);
+insert into Krish_Seth values(033,'Chicken Wings',0);
+insert into Krish_Seth values(034,'Chicken mKrish_Sethos',0);
+insert into Krish_Seth values(035,'Sparkling water',0);
+insert into Krish_Seth values(036,'Badam Milk',0);
+insert into Krish_Seth values(037,'Mint Mojito',0);
+insert into Krish_Seth values(038,'Cold Hot Coffee',0);
+insert into Krish_Seth values(039,'Ice Tea',0);
+insert into Krish_Seth values(040,'Ice Cream Kulfi',0);
+insert into Krish_Seth values(041,'Gulab Jamun',0);
+insert into Krish_Seth values(042,'Rasmalai',0);
+insert into Krish_Seth values(043,'Jalebi',0);
+insert into Krish_Seth values(044,'Pasteries',0);
+
+
+
+22)
+create table Kat_Singhania(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Kat_Singhania values(001,'Dal Makhani',0);
+insert into Kat_Singhania values(002,'Shahi Paneer',0);
+insert into Kat_Singhania values(003,'Malai Kofta',0);
+insert into Kat_Singhania values(004,'Mix Vegetables',0);
+insert into Kat_Singhania values(005,'Veg. Supreme Biryani',0);
+insert into Kat_Singhania values(006,'Laccha Paratha',0);
+insert into Kat_Singhania values(007,'Butter Naan',0);
+insert into Kat_Singhania values(008,'Manchurian noodles',0);
+insert into Kat_Singhania values(009,'Masala Pasta',0);
+insert into Kat_Singhania values(010,'Margherita Pizza',0);
+insert into Kat_Singhania values(011,'Cheese Frankie',0);
+insert into Kat_Singhania values(012,'Focaccia Bread',0);
+insert into Kat_Singhania values(013,'MushroKat_Singhania Risotto',0);
+insert into Kat_Singhania values(014,'Bruschetta',0);
+insert into Kat_Singhania values(015,'Masala Dosa',0);
+insert into Kat_Singhania values(016,'Uttapam',0);
+insert into Kat_Singhania values(017,'Idli Vada Sambhar',0);
+insert into Kat_Singhania values(018,'Hyderabadi Biryani',0);
+insert into Kat_Singhania values(019,'Rasam Rice',0);
+insert into Kat_Singhania values(020,'Aloo Bonda',0);
+insert into Kat_Singhania values(021,'Pakoda with Chutney',0);
+insert into Kat_Singhania values(022,'Chiken Tikka',0);
+insert into Kat_Singhania values(023,'Chicken Curry with Rice',0);
+insert into Kat_Singhania values(024,'Chicken Biryani',0);
+insert into Kat_Singhania values(025,'Mutton Roast',0);
+insert into Kat_Singhania values(026,'Egg Curry',0);
+insert into Kat_Singhania values(027,'Mutton Korma',0);
+insert into Kat_Singhania values(029,'Paneer Veg mKat_Singhaniaos',0);
+insert into Kat_Singhania values(030,'Spring Rolls',0);
+insert into Kat_Singhania values(031,'Onion Pyaz Kachordi',0);
+insert into Kat_Singhania values(032,'Chilli Honey Patatoes',0);
+insert into Kat_Singhania values(033,'Chicken Wings',0);
+insert into Kat_Singhania values(034,'Chicken mKat_Singhaniaos',0);
+insert into Kat_Singhania values(035,'Sparkling water',0);
+insert into Kat_Singhania values(036,'Badam Milk',0);
+insert into Kat_Singhania values(037,'Mint Mojito',0);
+insert into Kat_Singhania values(038,'Cold Hot Coffee',0);
+insert into Kat_Singhania values(039,'Ice Tea',0);
+insert into Kat_Singhania values(040,'Ice Cream Kulfi',0);
+insert into Kat_Singhania values(041,'Gulab Jamun',0);
+insert into Kat_Singhania values(042,'Rasmalai',0);
+insert into Kat_Singhania values(043,'Jalebi',0);
+insert into Kat_Singhania values(044,'Pasteries',0);
+
+
+
+
+23)
+create table Akshat_Bhandari(Recipe_id int Primary key, Recipe_name varchar(50), Opacity int);
+
+
+insert into Akshat_Bhandari values(001,'Dal Makhani',0);
+insert into Akshat_Bhandari values(002,'Shahi Paneer',0);
+insert into Akshat_Bhandari values(003,'Malai Kofta',0);
+insert into Akshat_Bhandari values(004,'Mix Vegetables',0);
+insert into Akshat_Bhandari values(005,'Veg. Supreme Biryani',0);
+insert into Akshat_Bhandari values(006,'Laccha Paratha',0);
+insert into Akshat_Bhandari values(007,'Butter Naan',0);
+insert into Akshat_Bhandari values(008,'Manchurian noodles',0);
+insert into Akshat_Bhandari values(009,'Masala Pasta',0);
+insert into Akshat_Bhandari values(010,'Margherita Pizza',0);
+insert into Akshat_Bhandari values(011,'Cheese Frankie',0);
+insert into Akshat_Bhandari values(012,'Focaccia Bread',0);
+insert into Akshat_Bhandari values(013,'MushroAkshat_Bhandari Risotto',0);
+insert into Akshat_Bhandari values(014,'Bruschetta',0);
+insert into Akshat_Bhandari values(015,'Masala Dosa',0);
+insert into Akshat_Bhandari values(016,'Uttapam',0);
+insert into Akshat_Bhandari values(017,'Idli Vada Sambhar',0);
+insert into Akshat_Bhandari values(018,'Hyderabadi Biryani',0);
+insert into Akshat_Bhandari values(019,'Rasam Rice',0);
+insert into Akshat_Bhandari values(020,'Aloo Bonda',0);
+insert into Akshat_Bhandari values(021,'Pakoda with Chutney',0);
+insert into Akshat_Bhandari values(022,'Chiken Tikka',0);
+insert into Akshat_Bhandari values(023,'Chicken Curry with Rice',0);
+insert into Akshat_Bhandari values(024,'Chicken Biryani',0);
+insert into Akshat_Bhandari values(025,'Mutton Roast',0);
+insert into Akshat_Bhandari values(026,'Egg Curry',0);
+insert into Akshat_Bhandari values(027,'Mutton Korma',0);
+insert into Akshat_Bhandari values(029,'Paneer Veg mAkshat_Bhandarios',0);
+insert into Akshat_Bhandari values(030,'Spring Rolls',0);
+insert into Akshat_Bhandari values(031,'Onion Pyaz Kachordi',0);
+insert into Akshat_Bhandari values(032,'Chilli Honey Patatoes',0);
+insert into Akshat_Bhandari values(033,'Chicken Wings',0);
+insert into Akshat_Bhandari values(034,'Chicken mAkshat_Bhandarios',0);
+insert into Akshat_Bhandari values(035,'Sparkling water',0);
+insert into Akshat_Bhandari values(036,'Badam Milk',0);
+insert into Akshat_Bhandari values(037,'Mint Mojito',0);
+insert into Akshat_Bhandari values(038,'Cold Hot Coffee',0);
+insert into Akshat_Bhandari values(039,'Ice Tea',0);
+insert into Akshat_Bhandari values(040,'Ice Cream Kulfi',0);
+insert into Akshat_Bhandari values(041,'Gulab Jamun',0);
+insert into Akshat_Bhandari values(042,'Rasmalai',0);
+insert into Akshat_Bhandari values(043,'Jalebi',0);
+insert into Akshat_Bhandari values(044,'Pasteries',0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
